@@ -128,3 +128,7 @@ C:\Users\DANIEL\Documents\GitHub\ActivosMVC\ActivosMVC\bin\es\System.Web.WebPage
 C:\Users\DANIEL\Documents\GitHub\ActivosMVC\ActivosMVC\bin\es\WebMatrix.Data.resources.dll
 C:\Users\DANIEL\Documents\GitHub\ActivosMVC\ActivosMVC\bin\es\Microsoft.Web.WebPages.OAuth.resources.dll
 C:\Users\DANIEL\Documents\GitHub\ActivosMVC\ActivosMVC\bin\es\WebMatrix.WebData.resources.dll
+C:\Users\Kelvin\Documents\GitHub\ActivosMvc\ActivosMVC\bin\Iesi.Collections.dll
+C:\Users\Kelvin\Documents\GitHub\ActivosMvc\ActivosMVC\bin\log4net.dll
+C:\Users\Kelvin\Documents\GitHub\ActivosMvc\ActivosMVC\bin\NHibernate.dll
+C:\Users\Kelvin\Documents\GitHub\ActivosMvc\ActivosMVC\bin\NHibernate.Mapping.Attributes.dll

@@ -1,12 +1,32 @@
 ﻿@{
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
+<script src="~/SiteRsc/js/libs/jQuery1.8.2/jQuery1.8.2-min.js" type="text/javascript"></script>
+<script src="~/SiteRsc/js/metodosAction.js" type="text/javascript"></script>
+
+@*
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $('#btnSave').click(function () {
+            var form = $("#formSave");
+            save(form);
+        });
+        
+        $('#btnSearch').click(function () {
+            var form = $("#formSearch");
+            search(form);
+        });
+
+    });
+</script>
+*@
 
 @using ActivosMvc.Modelo
 @using ActivosMvc.DAO
+@using ActivosMvc.Enums
 @using ActivosMvc.Services
 @model ActivoAsignado
-<!-- comentario para hacer pull-->
 
 @using (Html.BeginForm("Index", "Salidas", FormMethod.Post))
 {
@@ -14,11 +34,11 @@
         <tr>
             <td>Rubro</td>
             <td>
-                @Html.DropDownListFor(a => a.Almacen.Id, new SelectList(new CatalogosServices().getListadoAlmacenes(),"Id", "Descripcion"))
+               @Html.DropDownListFor(a => a.Almacen.Id, new SelectList(new CatalogosServices().getListadoAlmacenes(),"Id", "Descripcion"), new {@class="input_select"}) 
             </td>
             <td>Conceptos</td>
-            <td>
-                @Html.DropDownListFor(a => a.Id, new SelectList(ActivoDAO.getInstance().getListActivosPorAlmacen(),"Id", "Descripcion"))
+            <td colspan="3">
+               @Html.DropDownListFor(a => a.Id, new SelectList(ActivoDAO.getInstance().getListActivosPorAlmacen(),"Id", "Descripcion"), new {@class="input_select",style="width:300px;"})
             </td>         
         </tr>
         <tr>
@@ -28,24 +48,25 @@
         <tr>
             <td>Direccion</td>
             <td>
-                @Html.EditorFor(a => a.Area.NivelArea)
+               @Html.DropDownListFor(a => a.Area.Id, new SelectList(AreaDAO.getInstance().getListDirecciones(Convert.ToInt32(NivelArea.DIRECCION)),"Id", "Descripcion"), new {@class="input_select"})
             </td>
             <td>Departamento</td>
             <td>
-                @Html.EditorFor(a => a.Area.NivelArea)
+               @Html.DropDownListFor(a => a.Area.Id, new SelectList(AreaDAO.getInstance().getListDirecciones(Convert.ToInt32(NivelArea.DEPARTAMENTO)),"Id", "Descripcion"), new {@class="input_select"})
             </td>
             <td>Subdepartamento</td>
             <td>
-                @Html.EditorFor(a => a.Area.NivelArea)
+                @Html.DropDownListFor(a => a.Area.Id, new SelectList(AreaDAO.getInstance().getListDirecciones(Convert.ToInt32(NivelArea.SUBDEPARTAMENTO)),"Id", "Descripcion"), new {@class="input_select"})
             </td>
             <td>Agencia</td>
             <td>
-                @Html.EditorFor(a => a.Area.NivelArea)
+                @Html.DropDownListFor(a => a.Area.Id, new SelectList(AreaDAO.getInstance().getListDirecciones(Convert.ToInt32(NivelArea.AGENCIA)),"Id", "Descripcion"), new {@class="input_select"})
             </td>
         </tr>
         <tr>
-            <td><input type="button" value="Aceptar" id="btnAceptar"/> </td>
+            <td><input type="button" value="Aceptar" id="btnAceptar" class="btn_metro"/> </td>
         </tr>
-    </table>  
+    </table>
+    @*,@onchange = "llenarColonias();" *@
 }
 

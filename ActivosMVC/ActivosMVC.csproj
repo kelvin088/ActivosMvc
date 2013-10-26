@@ -182,11 +182,13 @@
     <Compile Include="Controllers\SalidasController.cs" />
     <Compile Include="DAO\ActivoDAO.cs" />
     <Compile Include="DAO\AlmacenDAO.cs" />
+    <Compile Include="DAO\AreaDAO.cs" />
     <Compile Include="Enums\NivelArea.cs" />
     <Compile Include="Enums\Rubro.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MantenerValoresDDL.cs" />
     <Compile Include="Modelo\Activo.cs" />
     <Compile Include="Modelo\ActivoAsignado.cs" />
     <Compile Include="Modelo\Almacen.cs" />
@@ -269,7 +271,9 @@
     <None Include="SiteRsc\Scripts\jquery-1.7.1.intellisense.js" />
     <EmbeddedResource Include="Mappings\Activo.hbm.xml" />
     <EmbeddedResource Include="Mappings\ActivoAsignado.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Almacen.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Almacen.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\Area.hbm.xml" />
     <EmbeddedResource Include="Mappings\BaseBO.hbm.xml" />
     <Content Include="NhibernateUtils\Iesi.Collections.dll" />
